@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $errors['bericht'] = 'Vul minimaal 5 tekens in.';
     }
 
-    print_r($errors);
+    //print_r($errors);
 
     if (count($errors) == 0) {
         $sql = "INSERT INTO `contact` (`voornaam`, `achternaam`, `email`, `bericht`, `tijdstip`) 

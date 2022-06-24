@@ -2,24 +2,8 @@
 require 'functions.php';
 $connection = dbConnect();
 
-//checken of id wel is meegestuurd in de URL
-if (!isset($_GET['id'])) {
-    echo "De id is niet gezet";
-    exit;
-}
+$result = $connection->query('SELECT * FROM `mannen` WHERE `mv` = "vrouw" ORDER BY RAND();');
 
-//checken of het wel een getal (integer) is
-$id = $_GET['id'];
-$check_int = filter_var($id, FILTER_VALIDATE_INT);
-if ($check_int == false) {
-    echo "Dit is geen getal (interger)";
-    exit;
-}
-
-$statement = $connection->prepare('SELECT * FROM `mannen` WHERE id=?');
-$params = [$id];
-$statement->execute($params);
-$place = $statement->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -49,27 +33,37 @@ $place = $statement->fetch(PDO::FETCH_ASSOC);
             </ul>
         </nav>
     </header>
-    <main class="detail__main">
-        <article class="detail">
-            <figure class="detail__figure">
-                <img src="img/<?php echo $place['foto'] ?>" class="detail__image">
-            </figure>
-            <section class="detail__section">
-                <h2 class="detail__naam">
-                    <?php echo $place['merk'] ?>
-                </h2>
-                <p class="detail__text">
-                    <?php echo $place['beschrijving'] ?>
-                </p>
-                <p class="detail__text">
-                    <?php echo $place['info'] ?>
-                </p>
-                <p class="detail__text">
-                    €<?php echo $place['prijs'] ?>
-                </p>
-                <a href="#" onclick="goBack()" class="terug--link">Terug naar de produchten</a>
-            </section>
-        </article>
+    <main class="section">
+        <section class="inputs">
+            <div>
+                <input id="shirts" type="checkbox" class="filter">
+                <label for="shirts" class="label">Shirts</label>
+            </div>
+            <div>
+                <input id="jassen" type="checkbox" class="filter">
+                <label for="jassen" class="label">Jassen</label>
+            </div>
+            <div>
+                <input id="broeken" type="checkbox" class="filter">
+                <label for="broeken" class="label">Broeken</label>
+            </div>
+        </section>
+        <ul class="herenKleren">
+            <?php foreach ($result as $row) : ?>
+                <li class="heren" data-category="<?php echo $row["cat"] ?>">
+                    <a href="details.php?id=<?php echo $row['id']; ?>">
+                        <img src="img/<?php echo $row['foto'] ?>" alt="">
+                        <div class="overlay">
+                            <h2><?php echo $row['merk']; ?></h2>
+                            <h4><?php echo $row['beschrijving'] ?></h4>
+                            <br>
+                            <h4>€<?php echo $row['prijs'] ?></h4>
+                        </div>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+
+        </ul>
     </main>
     <footer class="footer">
         <section class="socials">

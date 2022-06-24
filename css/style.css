@@ -1,0 +1,520 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+main {
+    min-height: 75vh;
+}
+
+body {
+    background: #eee;
+    font-size: 150%;
+    font-family: sans-serif;
+}
+
+.hidden{
+    display: none;
+}
+
+.header,
+footer {
+    color: black;
+    font-size: 3rem;
+    background: #94B49F; 
+}
+
+.header {
+    box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2),
+        inset 0 -1rem 1rem -1rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.footer {
+    box-shadow: 0 -1rem 1rem 0 rgba(0, 0, 0, 0.2),
+        inset 0 1rem 1rem -1rem rgba(0, 0, 0, 0.1);
+    bottom: 0;
+    width: 100%;
+    padding: 2rem;
+}
+
+nav {
+    width: 100vw;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.ul--header {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+}
+
+
+.mij {
+    display: flex;
+    justify-content: center;
+    font-size: 80%;
+}
+
+.ul--footer {
+    list-style: none;
+}
+
+
+.a--header,
+.a--footer {
+    text-decoration: none;
+    color: black;
+    transition: 0.2s;
+}
+
+.a--header:hover {
+    border-bottom: 0.5rem solid black;
+}
+
+.a--footer:hover {
+    border-bottom: 0.5rem solid black;
+}
+
+h2 {
+    font-style: none;
+    font-family: sans-serif;
+    font-weight: normal;
+}
+
+h4 {
+    font-style: none;
+    font-family: sans-serif;
+    font-weight: normal;
+}
+
+/* index */
+
+.section--first {
+    height: 100%;
+    padding: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.text--index {
+    font-size: 200%;
+    display: flex;
+    justify-content: top;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url('../img/mannenAchtergrond.webp');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 45.9rem;
+    width: 65rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.herenlink {
+    text-decoration: none;
+    color: #eee;
+    text-decoration: underline;
+    transition: 0.2s;
+}
+
+.herenlink:hover {
+    text-decoration: none;
+    border-bottom: 0.5rem solid white;
+}
+
+.w3-content .mySlides {
+    width: 35rem;
+    height: 50rem;
+    box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2)
+}
+
+.section--third {
+    display: flex;
+    height: auto;
+    padding: 4rem;
+    align-items: center;
+}
+
+.arrow {
+    width: 10%;
+    background: #eee;
+    font-size: 300%;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+}
+
+.arrow:hover {
+    cursor: pointer;
+}
+
+.reviews {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 2rem;
+    width: 80%;
+    flex-wrap: wrap;
+}
+
+.review {
+    width: 30rem;
+    height: 27rem;
+    list-style: none;
+    padding: 4rem;
+    border-radius: 0.5rem;
+    background: #eee;
+    box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2),
+        inset 0 -1rem 1rem -1rem rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation-name: fadeIn;
+    animation-duration: 0.7s;
+}
+
+.review:nth-of-type(4),
+.review:nth-of-type(5),
+.review:nth-of-type(6) {
+    display: none;
+}
+
+.qoute {
+    font-size: 600%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 0.5;
+}
+
+.stars {
+    color: gold;
+    font-size: 120%;
+    padding-bottom: 0.5rem;
+}
+
+.review p {
+    font-size: 95%;
+    font-style: italic;
+    border-bottom: 0.5rem solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 2rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* heren en vrouwen */
+
+.herenKleren {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-self: center;
+    padding: 2rem;
+    padding-top: 0rem;
+    box-sizing: border-box;
+}
+
+.inputs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    gap: 4rem;
+    width: 100%;
+    flex-wrap: wrap;
+    font-size: 120%;
+}
+
+.inputs > div{
+    display: flex;
+    align-items: center;
+    width: 20rem;
+    gap: 1rem;
+}
+
+.label:hover{
+    cursor: pointer;
+}
+
+.filter{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 0.5rem;
+}
+
+.filter:checked ~ .label{
+    text-decoration: underline;
+}
+
+.filter:hover{
+    cursor: pointer;
+}
+
+.heren {
+    list-style: none;
+    width: 25rem;
+    height: 42rem;
+    transition: 0.2s transform;
+    position: relative;
+}
+
+.heren img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    display: block;
+    box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 120%;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .heren:hover .overlay {
+    opacity: 1;
+  }
+
+
+
+/* detail */
+
+.detail__main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    gap: 4rem;
+    font-family: sans-serif;
+    flex-wrap: wrap;
+    padding: 4rem;
+}
+
+.detail{
+    width: 60vw;
+    height: auto;
+    background: #B4CFB0;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    position: relative;
+}
+
+.detail__figure {
+    width: 100%;
+    height: 100%;
+    padding: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.detail__section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4rem;
+}
+
+.detail__naam {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 200%;
+}
+
+.detail__text {
+    font-size: 110%;
+    line-height: 1.5;
+}
+
+/* contact */
+
+.section--mail {
+    padding: 4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container {
+    width: 50rem;
+    margin: 0 auto;
+    padding: 2rem;
+    box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2),
+        inset 0 -1rem 1rem -1rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+    background: #B4CFB0;
+}
+
+.form-group {
+    width: 100%;
+    margin-top: 2rem;
+    font-size: 110%;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 95%;
+    border: 1px solid rgba(128, 128, 128, 0.199);
+    margin-top: 0.5rem;
+    border-radius: 0.2rem;
+}
+
+textarea {
+    resize: none;
+}
+
+.button--div{
+    display: flex;
+    justify-content: center;
+}
+
+.button--mail {
+    width: 20%;
+    border: none;
+    outline: none;
+    padding: 0.7rem;
+    font-size: 110%;
+    border-radius: 0.5rem;
+    font-family: sans-serif;
+    color: black;
+    background: white;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: 0.3s;
+}
+
+.button--mail:hover {
+    background: lightgrey;
+}
+
+.form--error{
+    background: #ff1313;
+    padding: 0.5rem;
+    color: white;
+}
+
+/* bedankt pagina */
+
+.bedankt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.bedankt--link{
+    color: black;
+}
+
+@media screen and (max-width: 78rem) {
+    .text--index{
+        display: none;
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 62.5rem) {
+    .detail{
+        grid-template-columns: 100%;
+    }
+}
+
+@media screen and (max-width: 50rem) {
+    .arrow {
+        display: none;
+    }
+
+    .reviews {
+        width: 100%;
+    }
+    .filter{
+        width: 4rem;
+        height: 4rem;
+    }
+    .label{
+        font-size: 80%;
+    }
+    .inputs{
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .inputs > div{
+        width: 10rem;
+    }
+}
+
+
+@media screen and (max-width: 40rem) {
+    .container{
+        width: 90%;
+    }
+    .button--mail{
+        font-size: 90%;
+    }
+}
+
+@media screen and (max-width: 45rem) {
+    .header{
+        font-size: 140%;
+    }
+}
+
+
+
